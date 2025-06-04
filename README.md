@@ -1,22 +1,42 @@
-# Voice Chat Assistant
+# PyDice
 
-This repository contains a simple example of a voice-based assistant in Python.
-The assistant uses a **local** language model (via the `transformers` library),
-and relies on `speech_recognition` for microphone input and `pyttsx3` for
-text-to-speech. The model is downloaded automatically on first run.
+![Build](https://github.com/example/pydice/actions/workflows/ci.yml/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-100%25-green.svg)
 
-## Plan
+Command line dice roller.
 
-1. Install dependencies (Python 3.10 or later):
-   ```bash
-   pip install -r requirements.txt
-   ```
-   - `pyaudio` is required by `speech_recognition` for microphone access.
-2. Run `python voice_assistant.py`.
-3. Speak into the microphone; the assistant will recognize your speech,
-   generate a reply using the local model, and read it aloud.
-4. Say `команда <shell command>` to execute a system command.
-5. Say "выход" (or "quit"/"exit") to end the conversation.
+See [GIF screencast](https://example.com/pydice.gif).
 
-This is a minimal example; you can expand it with a GUI,
-custom wake word detection, or a local language model.
+## Installation
+
+```bash
+poetry install
+```
+
+Alternatively install from PyPI:
+
+```bash
+pip install pydice
+```
+
+## Usage
+
+```bash
+pydice 2d6+1
+pydice 1d20 --hist 1000 --json
+pydice 4d10 --json
+pydice 3d6 --hist 200
+```
+
+Detailed usage in [docs/usage.md](docs/usage.md).
+More history in [docs/extra.md](docs/extra.md).
+Changelog: [docs/changelog.md](docs/changelog.md).
+API reference in [docs/api_reference.md](docs/api_reference.md).
+FAQ: [docs/faq.md](docs/faq.md).
+Acknowledgements in [docs/acknowledgements.md](docs/acknowledgements.md).
+
+## Contributing
+
+Pull requests are welcome. Run `poetry run coverage run -m pytest` before
+submitting.
+\nHappy rolling!
